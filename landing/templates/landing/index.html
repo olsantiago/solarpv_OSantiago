@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="generator" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="author" content="dopweb" />
+    <title>Solar PV</title>
+    <meta name="description" content="" />
+    <link rel="canonical" href="">
+    <link rel="icon" type="image/png" href="" />
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+
+    <style>
+        body {
+            position: relative;
+            padding: 0;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        .col-1 {
+            width: 8.33%
+        }
+
+        .col-2 {
+            width: 16.66%
+        }
+
+        .col-3 {
+            width: 25%
+        }
+
+        .col-4 {
+            width: 33.33%
+        }
+
+        .col-5 {
+            width: 41.66%
+        }
+
+        .col-6 {
+            width: 50%
+        }
+
+        .col-7 {
+            width: 58.33%
+        }
+
+        .col-8 {
+            width: 66.66%
+        }
+
+        .col-9 {
+            width: 75%
+        }
+
+        .col-10 {
+            width: 83.33%
+        }
+
+        .col-11 {
+            width: 91.66%
+        }
+
+        .col-12 {
+            width: 100%
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px
+        }
+
+        .inner_ul_abso li:first-child {
+            padding-top: 13px
+        }
+
+        @media only screen and (max-width:768px) {
+            .col-1 {
+                width: 100%
+            }
+
+            .col-2 {
+                width: 100%
+            }
+
+            .col-3 {
+                width: 100%
+            }
+
+            .col-4 {
+                width: 100%
+            }
+
+            .col-5 {
+                width: 100%
+            }
+
+            .col-6 {
+                width: 100%
+            }
+
+            .col-7 {
+                width: 100%
+            }
+
+            .col-8 {
+                width: 100%
+            }
+
+            .col-9 {
+                width: 100%
+            }
+
+            .col-10 {
+                width: 100%
+            }
+
+            .col-11 {
+                width: 100%
+            }
+        }
+
+        .container {
+            padding: 0 15px;
+            margin-right: auto;
+            margin-left: auto
+        }
+
+        .no-container {
+            padding: 10px 5%;
+        }
+
+        @media (min-width:768px) {
+            .container {
+                width: 750px
+            }
+        }
+
+        @media (min-width:992px) {
+            .container {
+                width: 970px
+            }
+        }
+
+        @media (min-width:1200px) {
+            .container {
+                width: 1170px
+            }
+        }
+
+        .head {
+            background: #fff;
+            color:#000;
+        }
+
+        .head .col-12 {
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .head .head-links {
+            width: 200px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3vh
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #26272b;
+        }
+
+        .topnav a {
+            float: right;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: rgb(6, 158, 247);
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        .topnav .icon:before {
+            content: "☰";
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+
+            .topnav a {
+                float: left;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+        
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="head">
+        <div class="no-container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="head-links">
+                        <a>About us</a>
+                        <a>Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Solar PV</h1>
+                    <span>Reasear & Development</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="topnav" id="myTopnav">
+        <a href="#about">Cyber Security</a>
+        <a href="#about">Data Analytics</a>
+        <a href="#contact">PV Systems</a>
+        <a href="#news">PV Module</a>
+        <a href="#home" class="active">Rack & Trackers</a>
+        <a href="javascript:void(0);" class="icon" onclick="mobileButtonClick()">
+
+        </a>
+    </div>
+
+    <section>
+        <div class="no-container">
+            <div class="row" style="display:flex; justify-content: center; flex-wrap: wrap;">
+                <div class="col-4" style="border:1px solid">
+                    <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
+                        <div id="signIn">
+                            <div class="btn-text" onclick="openForm()">Sign In</div>
+                            <div class="modal">
+                                <div class="close-button" onclick="closeForm()">x</div>
+                                <div class="form-title">Sign In</div>
+                                <div class="input-group">
+                                    <input type="text" id="name" onblur="checkInput(this)" />
+                                    <label for="name">Username</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="password" id="password" onblur="checkInput(this)" />
+                                    <label for="password">Password</label>
+                                </div>
+                                <div class="form-button" onclick="closeForm()">Go</div>
+
+                            </div>
+                        </div>
+
+                        <div id="signUp">
+                            <div class="btn-text" onclick="openForm2()">SignUp</div>
+                            <div class="modal">
+                                <div class="close-button" onclick="closeForm2()">x</div>
+                                <div class="form-title">Sign Up</div>
+                                <div class="input-group">
+                                    <input type="text" id="name" onblur="checkInput(this)" />
+                                    <label for="name">Username</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="password" id="password" onblur="checkInput(this)" />
+                                    <label for="password">Password</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" id="fname" onblur="checkInput(this)" />
+                                    <label for="fname">First Name</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" id="lname" onblur="checkInput(this)" />
+                                    <label for="lname">Last Name</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" id="address" onblur="checkInput(this)" />
+                                    <label for="address">Address</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" id="DOB" onblur="checkInput(this)" />
+                                    <label for="DOB">DOB</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" id="phone" onblur="checkInput(this)" />
+                                    <label for="phone">Phone</label>
+                                </div>
+                                <div class="form-button" onclick="closeForm2()">Go</div>
+
+                            </div>
+                        </div>
+                        
+
+                    </div>
+
+                    <div id="list5">
+                            <ul>
+                               <li>PV Module
+                                  <ul>
+                                     <li>Test & Certificate</li>
+                                     <li>PV Rating</li>
+             
+                                  </ul>
+                               </li>
+                               <li>PV System Performance
+                                  <ul>
+                                     <li>Monitoring & Inspection</li>
+                                     <li>Performance Analysis</li>
+                                     <li>Compare system</li>
+                                     <li>Certification</li>
+                                  </ul>
+                               </li>
+                               <li>Data Analytics
+                                  <ul>
+                                     <li>Module lifetime prediction</li>
+                                     <li>Energy Prediction</li>
+                                     <li>MyBlogLog</li>
+                                  </ul>
+                               </li>
+                               <li>Cybersecurity and Smart </li>
+                               <li>Grid Technologies</li>
+                               <li>Solar PV University</li>
+                            </ul>
+                         </div>
+                </div>
+
+                <div class="col-4" style="position: relative;height: 60vh; display: flex; justify-content:cneter; align-items: center; flex-wrap:wrap;">
+                        <div class="slider" style="flex:1">
+                                <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+                                <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+                                <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+                                <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+                                <div class="slider__inner">
+                                  <div class="slider__contents">
+                                    <h2 class="slider__caption">CONTENT 1</h2>
+                                    <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                                  </div>
+                                  <div class="slider__contents">
+                                    <h2 class="slider__caption">CONTENT 2</h2>
+                                    <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                                  </div>
+                                  <div class="slider__contents">
+                                    <h2 class="slider__caption">CONTENT 3</h2>
+                                    <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                                  </div>
+                                  <div class="slider__contents">
+                                    <h2 class="slider__caption">CONTENT 4</h2>
+                                    <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                                  </div>
+                                </div>
+                              </div>
+                </div>
+                <div class="col-4" style="border:1px solid">
+                        <div class="news" style="text-align: center">
+                            <h2>News Events</h2>
+                            <a href="#">PhotoVoltaic Technical </a>
+                            <a href="#">Conference to take place in Marseille, France from 26 to 28 April 2017</a>
+                            <a href="#">Trump is next US president </a>
+                            <a href="#">Syrian forces recapture Aleppo </a>
+                            <a href="#">Senate votes on SCOTUS nominee</a>
+
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Site footer -->
+      <footer class="site-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-6">
+                  <h6>SolarPV</h6>
+                  <p class="text-justify">123 Roxon Ave Los Angeles 90057, 213-123-123, info@solarpv.com, solarpv.com</p>
+                </div>
+      
+                <div class="col-6">
+                  <h6>Links</h6>
+                  <ul class="footer-links">
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">About Us</a></li>
+                  </ul>
+                </div>
+              </div>
+              <hr>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved by 
+               <a href="#">Solar PV</a>.
+                  </p>
+                </div>
+      
+
+              </div>
+            </div>
+      </footer>
+
+    <script>
+        function mobileButtonClick() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+
+</body>
+
+</html>
