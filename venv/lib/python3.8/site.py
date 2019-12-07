@@ -269,7 +269,7 @@ def addsitepackages(known_paths, sys_prefix=sys.prefix, exec_prefix=sys.exec_pre
                 # locations. Currently only per-user, but /Library and
                 # /Network/Library could be added too
                 if "Python.framework" in prefix or "Python3.framework" in prefix:
-                    home = os.environ.get("HOME")
+                    home = get("HOME")
                     if home:
                         sitedirs.append(
                             os.path.join(home, "Library", "Python", "{}.{}".format(*sys.version_info), "site-packages")
@@ -318,7 +318,7 @@ def addusersitepackages(known_paths):
     USER_SITE/.. can be used for data.
     """
     global USER_BASE, USER_SITE, ENABLE_USER_SITE
-    env_base = os.environ.get("PYTHONUSERBASE", None)
+    env_base = get("PYTHONUSERBASE", None)
 
     def joinuser(*args):
         return os.path.expanduser(os.path.join(*args))
@@ -328,7 +328,7 @@ def addusersitepackages(known_paths):
     #    USER_BASE = ''
     #    USER_SITE = ''
     if os.name == "nt":
-        base = os.environ.get("APPDATA") or "~"
+        base = get("APPDATA") or "~"
         if env_base:
             USER_BASE = env_base
         else:

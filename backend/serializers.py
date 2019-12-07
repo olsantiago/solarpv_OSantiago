@@ -6,13 +6,13 @@ from .models import Client, User, Location, Test_Standard, Product, Certificate,
 class ClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
-        fields = ('client_name', 'client_type')
+        fields = ('client_name', 'client_type', 'client_id')
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('fname', 'lname', 'mname', 'job_title', 'email', 'ophone', 'cphone', 'prefix', 'client_ID')
+        fields = ('username', 'fname', 'lname', 'mname', 'job_title', 'email', 'ophone', 'cphone', 'prefix', 'client_ID')
 
 
 class LocationSerializer(serializers.ModelSerializer):

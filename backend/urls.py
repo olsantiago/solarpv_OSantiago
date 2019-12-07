@@ -12,6 +12,7 @@ router.register('test_sequence', views.TestSequenceView)
 router.register('performance_data', views.PerformanceDataView)
 router.register('service', views.ServiceView)
 router.register('certificate', views.CertificateView)
+#router.register('test', views.TestView.as_view(), basename='Test')
 
 urlpatterns = [
     url(r'^api/', include(router.urls))

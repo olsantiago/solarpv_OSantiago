@@ -317,43 +317,59 @@
                             </div>
                         </div>
 
-                        <div id="signUp">
+                        <form id="signUp">
                             <div class="btn-text" onclick="openForm2()">SignUp</div>
                             <div class="modal">
                                 <div class="close-button" onclick="closeForm2()">x</div>
                                 <div class="form-title">Sign Up</div>
                                 <div class="input-group">
-                                    <input type="text" id="name" onblur="checkInput(this)" />
-                                    <label for="name">Username</label>
+                                    <input type="text" id="upusername" onblur="checkInput(this)" />
+                                    <label for="upusername">Username</label>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" id="password" onblur="checkInput(this)" />
-                                    <label for="password">Password</label>
+                                    <label for="client_select">Company</label>
+                                    <select id="client_select">
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label for="prefix">Prefix</label>
+                                    <select id="prefix">
+                                        <option value="Mr">Mr.</option>
+                                        <option value="Mrs">Mrs.</option>
+                                    </select>
                                 </div>
                                 <div class="input-group">
                                     <input type="text" id="fname" onblur="checkInput(this)" />
                                     <label for="fname">First Name</label>
                                 </div>
                                 <div class="input-group">
+                                    <input type="text" id="mname" onblur="checkInput(this)" />
+                                    <label for="mname">Middle Name</label>
+                                </div>
+                                <div class="input-group">
                                     <input type="text" id="lname" onblur="checkInput(this)" />
                                     <label for="lname">Last Name</label>
                                 </div>
                                 <div class="input-group">
-                                    <input type="text" id="address" onblur="checkInput(this)" />
-                                    <label for="address">Address</label>
+                                    <input type="text" id="email" onblur="checkInput(this)" />
+                                    <label for="email">Email</label>
                                 </div>
                                 <div class="input-group">
-                                    <input type="text" id="DOB" onblur="checkInput(this)" />
-                                    <label for="DOB">DOB</label>
+                                    <input type="text" id="job" onblur="checkInput(this)" />
+                                    <label for="job">Job Title</label>
                                 </div>
                                 <div class="input-group">
-                                    <input type="text" id="phone" onblur="checkInput(this)" />
-                                    <label for="phone">Phone</label>
+                                    <input type="text" id="ophone" onblur="checkInput(this)" />
+                                    <label for="ophone">Office Phone</label>
                                 </div>
-                                <div class="form-button" onclick="closeForm2()">Go</div>
+                                <div class="input-group">
+                                    <input type="text" id="cphone" onblur="checkInput(this)" />
+                                    <label for="cphone">CellPhone</label>
+                                </div>
+                                <button class="form-button" onclick="closeForm2()" type="submit">Go</button>
 
                             </div>
-                        </div>
+                        </form>
                         
 
                     </div>
@@ -477,6 +493,20 @@
     </script>
 
     <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('http://127.0.0.1:8000/backend/api/client/')
+            .then(response => response.json())
+            .then(data => {
+            var selectBox = document.getElementById('client_select');
+            for(var i = 0, l = data.length; i < l; i++){
+                var d = data[i];
+                selectBox.options.add( new Option(d.client_name, d.client_id, d.selected) );
+                }
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 
 
 </body>

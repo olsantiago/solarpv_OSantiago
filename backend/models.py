@@ -9,9 +9,13 @@ from django.db import models
 class Client(models.Model):
     client_name = models.CharField(max_length=20)
     client_type = models.CharField(max_length=20)
+    @property
+    def client_id(self):
+        return self.id
 
 
 class User(models.Model):
+    username = models.CharField(max_length=20, default='')
     fname = models.CharField(max_length=20)
     lname = models.CharField(max_length=20)
     mname = models.CharField(max_length=20)

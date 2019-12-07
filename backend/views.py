@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from django.http import JsonResponse
 
 from django.shortcuts import render
 from rest_framework import viewsets
@@ -11,9 +14,17 @@ from .serializers import ClientSerializer, UserSerializer, LocationSerializer, T
 
 # Create your views here.
 
+
 class ClientView(viewsets.ModelViewSet):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
+
+
+class TestView(APIView):
+    def get(self, request):
+        queryset = Client.objects.all()
+        serializer_class = ClientSerializer(queryset, many=True)
+        return Response(serializer_class.data)
 
 
 class UserView(viewsets.ModelViewSet):
